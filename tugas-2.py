@@ -19,18 +19,12 @@ barang = [
         'harga': 2000
     }
 ]
-"""
-def total_harga(jumlah, harga):
-    total = barang['jumlah']
-    harga = barang['harga']
-    total_harga = 0
-    for total in barang:
-        print(total)
-        for harga in barang:
-            print(harga)
-            total_harga = total * harga
-"""
 
-for i in barang:
-    total_harga = i['jumlah'] * i['harga']
-print("Total harga masing-masing barang: %d" % (total_harga))
+def hitung_total(benda):
+    harga_per_barang = 0
+    total_harga = 0
+    for i in benda:
+        harga_per_barang = i['jumlah'] * i['harga']
+        total_harga = total_harga + harga_per_barang
+    return total_harga
+print(hitung_total(barang))
