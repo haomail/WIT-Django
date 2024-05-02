@@ -1,5 +1,5 @@
-python m - venv test_venv
-.\test_venv\Scripts\activate
+python m - venv test_env
+.\test_env\Scripts\activate
 
 pip install Django==4.2
 
@@ -12,3 +12,14 @@ REM py -m pip list
 
 python manage.py makemigrations
 python manage.py startapp pengguna
+
+REM run the app
+.\test_env\Scripts\activate
+cd web-django/test_env/Scripts/project_pertama
+python manage.py runserver
+
+python manage.py createsuperuser REM untuk buat admin (username, email, password)
+python manage.py migrate REM untuk apply migrations
+
+python manage.py makemigrations REM untuk create models
+python manage.py migrate REM setiap create models harus selalu dimigrate
